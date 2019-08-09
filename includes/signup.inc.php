@@ -24,7 +24,7 @@ if (isset($_POST["signup-submit"])) {
 		header("location: ../signup.php?error=invladinuid&mail=".$mail);
 		exit();
 	}
-	elseif (){
+	elseif ($password == $passwordRepeat){
 
 
 	}
