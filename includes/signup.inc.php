@@ -24,8 +24,24 @@ if (isset($_POST["signup-submit"])) {
 		header("location: ../signup.php?error=invladinuid&mail=".$mail);
 		exit();
 	}
-	elseif ($password == $passwordRepeat){
-
+	elseif ($password !== $passwordRepeat){
+		header("location: ../signup.php?error=passwordnotmatch&mail=".$mail);
+		exit();
 
 	}
-}
+
+	$sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers)
+	VALUE ('$username', '$email', '$password')";
+
+	if ($conn->query($sql) === TRUE) { 
+		echo "signup sucessfully";
+	} else {
+		echo "Error: " .$sql. "<br>". $conn->error;
+		}
+$conn->close();
+	}
+
+
+
+
+?>
