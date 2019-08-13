@@ -15,8 +15,6 @@
 			<button type = "submit" name="signup-submit">Signup</button>
 		</form>
 	</main>
-
-
 <?php
 	if (isset($_GET['error'])){
 		if($_GET['error'] == "emptyfields"){
@@ -38,8 +36,9 @@
 			echo '<p> This username is already taken </p>';
 		}
 	}
-	elseif ($_GET['signup'] == "success"){
-		echo '<p> Sign up successful</p>';
+	elseif (isset($_GET['signup']) AND $_GET['signup'] == "success"){
+		echo '<p> Signup successfully </p>';
 	}
 	require "footer.php";
 ?>
+
