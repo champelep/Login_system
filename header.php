@@ -11,7 +11,7 @@
 
 	<header>
 		<nav>
-			<a href="index.php"> 
+			<a href="#"> 
 				<img src="img/logo.png" alt="logo" width="100" height="100">
 			</a>
 			<ul>
