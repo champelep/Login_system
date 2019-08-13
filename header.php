@@ -11,12 +11,12 @@
 
 	<header>
 		<nav>
-			<a href="#"> 
+			<a href="index.php"> 
 				<img src="img/logo.png" alt="logo" width="100" height="100">
 			</a>
 			<ul>
 				<li><a href="index.php">Home</li>
-				<li><a href="#">Portfolio</li>
+				<li><a href="portfolio.php">Portfolio</li>
 				<li><a href="#">About me</li>
 				<li><a href="#">Contact</li>
 			</ul>
