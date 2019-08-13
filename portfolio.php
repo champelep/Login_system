@@ -17,7 +17,7 @@ session_start();
 	<br>
 	<form>
 		<form action="includes/portfolio.inc.php" method="post">
-		<textarea name = "message" rows = "30" cols = "50"></textarea><br>
+		<textarea name = "message" rows = "30" cols = "50" placeholder="enter your mesage"></textarea><br>
 		<button type = "submit" name = "save-message"> Save Message </button>
 	</form>
 </body>
