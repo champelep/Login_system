@@ -11,9 +11,9 @@
 
 	<header>
 		<nav>
-			<!--<a href="#"> 
-				<img src="img/logo.png" alt="logo">
-			</a> -->
+			<a href="#"> 
+				<img src="img/logo.png" alt="logo" width="100" height="100">
+			</a>
 			<ul>
 				<li><a href="index.php">Home</li>
 				<li><a href="#">Portfolio</li>
