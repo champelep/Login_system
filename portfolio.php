@@ -36,7 +36,20 @@ session_start();
 		<textarea name = "savedMessage" rows = "30" cols = "50" placeholder="enter your mesage"><?php echo $msg; ?></textarea>
 		<br>
 		<input type = "submit" value = "Save" name = "save">
-		<input type="submit" value = "Display" name="disp"/>
+		<!-- <input type="submit" value = "Display" name="disp"/> -->
 	</form>
+
+	<form action="includes/portfolio.inc.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+	</form>
+
+	<?php
+	if(isset($_GET['upload']) == "success");
+		echo '<p>Your file has been uploaded</p>';
+	?>
+
+
 </body>
 </html>
