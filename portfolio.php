@@ -5,7 +5,7 @@ session_start();
 		header ("Location:index.php?error=notloggedin");
 	}
 
-	// = code starts here
+	// = show saved text in the text area
 	if(isset($_SESSION['userId']) && $_SESSION['userId']){
 		$con= new mysqli("localhost","root","","loginsystem") or die("ERROR:could not connect to the database!!!");
 		$sql="SELECT * FROM users WHERE idUsers = ". $_SESSION['userId'];
@@ -15,8 +15,7 @@ session_start();
   // Fetch one and one row
   	while ($row = mysqli_fetch_assoc($result))
     {
-    	// var_dump($row);
-    	// echo "<br>";
+
    		$msg = $row['textarea'];
     }
   // Free result set

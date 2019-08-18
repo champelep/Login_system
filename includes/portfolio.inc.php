@@ -6,7 +6,7 @@ session_start();
 //mysqli connectivity, select database
 $connect= new mysqli("localhost","root","","loginsystem") or die("ERROR:could not connect to the database!!!");
 
-//extract all html field
+
 // extract($_POST);
 if( isset($_POST['save']) && $_POST['save'] ){
 	//store textarea values in <pre> tag
@@ -19,7 +19,7 @@ if( isset($_POST['save']) && $_POST['save'] ){
 
 
 }
-
+//upload file
 $target_dir = "Upload/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
