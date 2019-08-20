@@ -18,5 +18,6 @@
 
 
 <?php
+//test git shit 2
 	require "footer.php";
 ?>
