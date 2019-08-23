@@ -66,7 +66,7 @@ if ($uploadOk == 0) {
         header("location: http://localhost/Login_system/portfolio.php?upload=success");
     } else {
         echo "Sorry, there was an error uploading your file.";
-    }
+    } // todo(s): 1) upload the file name to the database. 2) php request database for filename and pull the exact file from server
 }
 
 ?>
