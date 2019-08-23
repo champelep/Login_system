@@ -22,9 +22,14 @@ if( isset($_POST['save']) && $_POST['save'] ){
 //upload file
 $target_dir = "Upload/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+$target_file_name = uniqid().md5(basename($_FILES["fileToUpload"]["name"]) );
+$target_dest = $target_dir . $target_file_name . ".".$imageFileType;
+
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-//$newfilename = round(microtime(true)) . '.' . end($imageFileType);
+// $rand = rand(0000,9999);
+//$newfilename = round(microtime(true)) . '.' . end($target_file);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -37,7 +42,7 @@ if(isset($_POST["submit"])) {
     }
 }
 // Check if file already exists
-if (file_exists($target_file)) {
+if (file_exists($target_dest)) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
@@ -57,7 +62,7 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dest)) {
         header("location: http://localhost/Login_system/portfolio.php?upload=success");
     } else {
         echo "Sorry, there was an error uploading your file.";
