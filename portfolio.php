@@ -45,10 +45,12 @@ session_start();
     <input type="submit" value="Upload Image" name="submit">
 	</form>
 
+
 	<?php
-	if(isset($_GET['upload']) == "success");
+
+		if(isset($_GET['upload']) == "success");
 		echo '<p>Your file has been uploaded</p>';
-		//test some git hub shit. 
+		
 	?>
 
 
