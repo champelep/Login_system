@@ -16,8 +16,8 @@ session_start();
   // Fetch one and one row
   	while ($row = mysqli_fetch_assoc($result))
     {
-
-   		$msg = $row['textarea'];
+    	$msg = $row['textarea'];
+    	$showFile = "includes/" . $row['fileName'];
     }
   // Free result set
  		 mysqli_free_result($result);
@@ -44,7 +44,8 @@ session_start();
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 	</form>
-
+	<br>
+	<img src="<?php echo $showFile; ?>">
 
 	<?php
 

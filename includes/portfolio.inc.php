@@ -64,6 +64,8 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dest)) {
         header("location: http://localhost/Login_system/portfolio.php?upload=success");
+        $query_file = "UPDATE users SET fileName = '$target_dest' WHERE idUsers = ". $_SESSION['userId']; 
+        $connect->query($query_file);
     } else {
         echo "Sorry, there was an error uploading your file.";
     } // todo(s): 1) upload the file name to the database. 2) php request database for filename and pull the exact file from server
